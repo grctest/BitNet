@@ -34,7 +34,6 @@ This project is based on the [llama.cpp](https://github.com/ggerganov/llama.cpp)
 ❗️**We use existing 1-bit LLMs available on [Hugging Face](https://huggingface.co/) to demonstrate the inference capabilities of bitnet.cpp. These models are neither trained nor released by Microsoft. We hope the release of bitnet.cpp will inspire the development of 1-bit LLMs in large-scale settings in terms of model size and training tokens.**
 
 <table>
-    </tr>
     <tr>
         <th rowspan="2">Model</th>
         <th rowspan="2">Parameters</th>
@@ -88,6 +87,20 @@ This project is based on the [llama.cpp](https://github.com/ggerganov/llama.cpp)
         <td>&#10004;</td>
         <td>&#10008;</td>
     </tr>
+    <tr>
+        <td rowspan="2"><a href="https://huggingface.co/arunb74/Luxeai-anu-1-bit-70M">Luxeai-anu-1-bit-70M</a></td>
+        <td rowspan="2">70M</td>
+        <td>x86</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>ARM</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
 </table>
 
 
@@ -137,14 +150,14 @@ huggingface-cli download HF1BitLLM/Llama3-8B-1.58-100B-tokens --local-dir models
 python setup_env.py -md models/Llama3-8B-1.58-100B-tokens -q i2_s
 ```
 <pre>
-usage: setup_env.py [-h] [--hf-repo {1bitLLM/bitnet_b1_58-large,1bitLLM/bitnet_b1_58-3B,HF1BitLLM/Llama3-8B-1.58-100B-tokens}] [--model-dir MODEL_DIR] [--log-dir LOG_DIR] [--quant-type {i2_s,tl1}] [--quant-embd]
+usage: setup_env.py [-h] [--hf-repo {1bitLLM/bitnet_b1_58-large,1bitLLM/bitnet_b1_58-3B,HF1BitLLM/Llama3-8B-1.58-100B-tokens,arunb74/Luxeai-anu-1-bit-70M}] [--model-dir MODEL_DIR] [--log-dir LOG_DIR] [--quant-type {i2_s,tl1}] [--quant-embd]
                     [--use-pretuned]
 
 Setup the environment for running inference
 
 optional arguments:
   -h, --help            show this help message and exit
-  --hf-repo {1bitLLM/bitnet_b1_58-large,1bitLLM/bitnet_b1_58-3B,HF1BitLLM/Llama3-8B-1.58-100B-tokens}, -hr {1bitLLM/bitnet_b1_58-large,1bitLLM/bitnet_b1_58-3B,HF1BitLLM/Llama3-8B-1.58-100B-tokens}
+  --hf-repo {1bitLLM/bitnet_b1_58-large,1bitLLM/bitnet_b1_58-3B,HF1BitLLM/Llama3-8B-1.58-100B-tokens,arunb74/Luxeai-anu-1-bit-70M}, -hr {1bitLLM/bitnet_b1_58-large,1bitLLM/bitnet_b1_58-3B,HF1BitLLM/Llama3-8B-1.58-100B-tokens,arunb74/Luxeai-anu-1-bit-70M}
                         Model used for inference
   --model-dir MODEL_DIR, -md MODEL_DIR
                         Directory to save/load the model

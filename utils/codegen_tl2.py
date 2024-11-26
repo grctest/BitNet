@@ -690,12 +690,15 @@ if __name__ == "__main__":
         "Llama3-8B-1.58-100B-tokens"        : [[14336, 4096],
                                                [4096, 14336],
                                                [1024, 4096],
-                                               [4096, 4096]] 
+                                               [4096, 4096]],
+        "Luxeai-anu-1-bit-70M"              : [[768, 512],
+                                                [768, 768],
+                                                [512, 768]] 
     }
 
     parser = argparse.ArgumentParser(description='gen impl')
     parser.add_argument('--model',default="input", type=str, dest="model", 
-                        help="choose from bitnet_b1_58-large/bitnet_b1_58-3B/Llama3-8B-1.58-100B-tokens.")
+                        help="choose from bitnet_b1_58-large/bitnet_b1_58-3B/Llama3-8B-1.58-100B-tokens/Luxeai-anu-1-bit-70M.")
     parser.add_argument('--BM',default="input", type=str,
                         help="block length when cutting one weight (M, K) into M / BM weights (BM, K).")
     parser.add_argument('--BK',default="input", type=str,
